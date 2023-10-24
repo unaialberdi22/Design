@@ -1,11 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import Equipo from './Equipo';
-
-export default function Header() {
+import Footer from './Footer';
+export default function Main() {
     return (
-      <View>
-        <Equipo></Equipo>
-      </View>
+        <View>
+          <Footer></Footer>
+        </View>
     );
 }
