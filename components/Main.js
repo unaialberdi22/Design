@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import Footer from './Footer';
+import Jugadores from './Jugadores';
 export default function Main() {
     return (
         <View>
-          <Footer></Footer>
+          <Jugadores></Jugadores>
         </View>
     );
 }

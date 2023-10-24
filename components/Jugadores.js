@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function Footer() {
+export default function Jugadores() {
     return (
     <View style={styles.main1}>
         <Text style={styles.Text}>Jugador 1.1</Text>
