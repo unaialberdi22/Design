@@ -2,11 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function Equipo() {
+  const equipos = ["Porsche","Ferrari","BMW","Mercedes"];
     return (
       <View style={styles.header}>
-        <Text style={styles.Text}>Equipo 1</Text>
-        <Text style={styles.Text}>Equipo 2</Text>
-        <Text style={styles.Text}>Equipo 3</Text>
+        {equipos.map((equipo) => {
+        return(
+          <Text style={styles.Text}>{equipo}</Text>
+        );
+      })}
       </View>
     );
 }
