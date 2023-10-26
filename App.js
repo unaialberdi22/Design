@@ -8,13 +8,11 @@ import Main from './components/Main';
 
 export default function App() {
 
-  const [equipoSeleccionado, setEquipoSeleccionado] = useState(null);
-
   return (
     <View style={styles.container}>
       <Header></Header>
       <View style={styles.main}>
-        <Main equipo={equipoSeleccionado}></Main>
+        <Main></Main>
         <Imagen></Imagen>
       </View>
       <Footer></Footer>

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function Imagen() {
     return (
         <View style={styles.imagen}>
-          <Image style={styles.foto} source={require('../imagenes/imagen.png')}></Image>
+          <Image style={styles.foto} source={require('../imagenes/1.jpg')}></Image>
         </View>
     );
 }
