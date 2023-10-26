@@ -7,11 +7,14 @@ import Main from './components/Main';
 // import Foto from './assets/imagen.jpg';
 
 export default function App() {
+
+  const [equipoSeleccionado, setEquipoSeleccionado] = useState(null);
+
   return (
     <View style={styles.container}>
       <Header></Header>
       <View style={styles.main}>
-        <Main></Main>
+        <Main equipo={equipoSeleccionado}></Main>
         <Imagen></Imagen>
       </View>
       <Footer></Footer>

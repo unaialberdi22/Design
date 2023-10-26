@@ -1,28 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import React, { useState } from 'react';
+import Jugadores from './Jugadores';
 
-export default function Equipo() {
-  const equipos = ["Porsche","Ferrari","BMW","Mercedes"];
-    return (
-      <View style={styles.header}>
-        {equipos.map((equipo) => {
-        return(
-          <Text style={styles.Text}>{equipo}</Text>
+export default function Equipo(Equipo) {
+  const equipos = ["Ferrari", "Porsche", "BMW", "Mercedes"];
+  const [equipoSeleccionado, setEquipoSeleccionado] = useState(null);
+
+  const handleEquipoClick = (equipo) => {
+    setEquipoSeleccionado(equipo);
+  };
+
+  return (
+    <View style={styles.header}>
+      {equipos.map((equipo) => {
+        return (
+          <Text style={styles.Text} key={equipo} onPress={() => handleEquipoClick(equipo)}>{equipo}</Text>
         );
-      })}
-      </View>
-    );
+        })}
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  header:{
+  header: {
     paddingTop: 10,
     paddingBottom: 10,
-    width: "200vh",
     borderWidth: 1,
-    flex: 'fitContent',
     flexDirection: 'row',
-    justifyContent: 'left',
+    justifyContent: 'flex-start',
   },
   Text: {
     margin: 10,
