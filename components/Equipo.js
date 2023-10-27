@@ -1,22 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import React, { useState } from 'react';
+import { StyleSheet, TouchableOpacity, Text, View, Image } from 'react-native';
 
-export default function Equipo(Equipo) {
-  const equipos = ["Ferrari", "Porsche", "BMW", "Mercedes"];
-  // const [equipoSeleccionado, setEquipoSeleccionado] = useState(null);
-
-  // const handleEquipoClick = (equipo) => {
-  //   setEquipoSeleccionado(equipo);
-  // };
+export default function Equipo({equipos, equipoSeleccionado, onEquipoSeleccionado}) {
 
   return (
     <View style={styles.header}>
-      {equipos.map((equipo) => {
-        return (
-          <Text style={styles.Text}>{equipo}</Text>
-        );
-        })}
+      {Object.keys(equipos).map((nombreEquipo, index) => (
+        <TouchableOpacity
+          key={index}
+          onPress={() => onEquipoSeleccionado(nombreEquipo)}
+        >
+          <Text style={[
+            styles.Text,
+            nombreEquipo === equipoSeleccionado ? styles.selectedNombreEquipo : null
+          ]}>
+            {nombreEquipo}
+          </Text>
+        </TouchableOpacity>
+      ))}
     </View>
   );
 }
@@ -35,5 +36,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     fontSize: 30,
     fontWeight: 'normal',
+  },
+  selectedNombreEquipo: {
+    backgroundColor: 'red',
   },
 });

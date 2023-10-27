@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function Imagen() {
+
+export default function Imagen({equipos, equipoSeleccionado, jugadorSeleccionado}) {
+
+  const foto = equipos[equipoSeleccionado][jugadorSeleccionado].imgIndex;
+
     return (
         <View style={styles.imagen}>
-          <Image style={styles.foto} source={require('../imagenes/1.jpg')}></Image>
+          <Image style={styles.foto} source={require(`../imagenes/${foto}.jpg`)} resizeMode="cover" onError={(e) => console.log(e.nativeEvent.error)}></Image>
         </View>
     );
 }
@@ -17,7 +21,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
       },
       foto: {
-        height: 'auto',
+        flex: 1,
+        width: undefined,
+        height: undefined,
         position: 'static',
       }
 });

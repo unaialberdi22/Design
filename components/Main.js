@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Jugadores from './Jugadores';
-export default function Main() {
-    return (
+import Imagen from './Imagen';
+export default function Main({equipos, equipoSeleccionado, jugadorSeleccionado, setJugadorSeleccionado}) {
+    
+  return (
+
         <View>
-          <Jugadores></Jugadores>
+          <Jugadores equipos={equipos} equipoSeleccionado={equipoSeleccionado} jugadorSeleccionado={jugadorSeleccionado} setJugadorSeleccionado={setJugadorSeleccionado}></Jugadores>
         </View>
     );
 }
